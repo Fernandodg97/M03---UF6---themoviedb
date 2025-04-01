@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Top 10 Películas Populares</title>
+</head>
+<body>
+    <h1>Top 10 Películas Populares</h1>
+    
+    <div th:if="${peliculas != null and !peliculas.isEmpty()}">
+        <ul>
+            <li th:each="pelicula : ${peliculas}">
+                <img src="https://image.tmdb.org/t/p/w500/{{pelicula.posterPath}}" alt="Poster de la película">
+                <h2 th:text="${pelicula.title}"></h2>
+                <p th:text="${pelicula.overview}"></p>
+                <p>Fecha de estreno: <span th:text="${pelicula.releaseDate}"></span></p>
+            </li>
+        </ul>
+    </div>
+
+    <div th:if="${peliculas == null or peliculas.isEmpty()}">
+        <p>No se pudieron obtener las películas en este momento.</p>
+    </div>
+</body>
+</html>
