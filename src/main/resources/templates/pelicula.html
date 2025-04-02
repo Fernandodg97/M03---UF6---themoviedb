@@ -9,6 +9,7 @@
     <div th:if="${peliculas != null and !peliculas.isEmpty()}">
         <ul>
             <li th:each="pelicula : ${peliculas}">
+                <!-- Fallo al pasar la imagen, el front recibe el src tal cual esta escrito en vez de la variable -->
                 <img src="https://image.tmdb.org/t/p/w500/{{pelicula.posterPath}}" alt="Poster de la película">
                 <h2 th:text="${pelicula.title}"></h2>
                 <p th:text="${pelicula.overview}"></p>
