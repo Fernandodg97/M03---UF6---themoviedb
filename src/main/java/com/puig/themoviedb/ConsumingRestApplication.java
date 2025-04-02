@@ -53,7 +53,7 @@ public class ConsumingRestApplication {
 
                 // Imprime la respuesta de la API en el log
                 log.info("### Respuesta de TMDb: OK! ###");
-                log.info("Respuesta: {}", response.getBody());
+                //log.info("Respuesta: {}", response.getBody());
             } catch (Exception e) {
                 // En caso de error, imprime el mensaje de error en el log
                 log.error("Error al consumir la API de TMDb", e);
